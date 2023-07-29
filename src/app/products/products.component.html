@@ -1,0 +1,7 @@
+<tr *ngFor="let p of products; let i = index">
+    <td><img src={{p.image}} height="200px" width="200px"></td>
+    <td>{{p.productName}}{{p.brand}}{{p.price}}{{p.description}}{{p.ratings}}{{p.stock}}</td>
+    <td><button type="submit" (click)="addToCart(i)">Add to Cart</button></td>
+</tr>
+
+       

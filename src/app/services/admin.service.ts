@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../product.model';
 import { HttpClient } from '@angular/common/http';
+import { Customer } from '../customer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,9 @@ export class AdminService {
   private static baseUrl : string = "http://localhost:3000"
 
   constructor(private http: HttpClient) { }
+
+
+
 
   addProducts(product : Product ){
     this.http.post(AdminService.baseUrl + "/customer/" ,product).subscribe(data => data = product)

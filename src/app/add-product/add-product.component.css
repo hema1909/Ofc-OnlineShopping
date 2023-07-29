@@ -1,0 +1,9 @@
+.image {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+.image1,
+.image {
+    margin: 0.4rem 0;
+}

@@ -1,0 +1,7 @@
+
+<tr *ngFor="let product of products; let i = index">
+    <td><img src={{product.image}} height="200px" width="200px"></td>
+    <td>{{product.productName}}{{product.brand}}{{product.price}}</td>
+    <td><button type="submit" class="btn-danger" (click)="delete(i)">Remove</button></td>
+    <td><button> &minus; </button><input type="number"><button> &plus; </button></td>
+</tr>

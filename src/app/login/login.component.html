@@ -1,0 +1,52 @@
+<!-- <div class="alert alert-danger" [hidden]="flag">{{msg}}</div> -->
+<div class="login-container">
+    <form (ngSubmit)="authenticate()" class="login-form" #flog="ngForm">
+        <div class="form-control">
+            <label>Username: </label>
+            <input type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username" [(ngModel)]="cred.customerName" #uname="ngModel"  pattern="[A-Za-z]{4,}" required/><br />
+            <div class="invalid-feedback" *ngIf="uname.dirty && uname.invalid">
+                Username cannot be empty or invalid username.
+            </div>
+        </div>
+        <div class="form-control">
+            <label>Password: </label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" [(ngModel)]="cred.password" #passwd="ngModel" pattern="[A-Za-z0-9]{4,}" required/><br />
+            <div class="invalid-feedback" *ngIf="passwd.dirty && passwd.invalid">
+                Password cannot be empty or invalid password.
+            </div>
+        </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <p>New Customer?</p>
+  
+  </form>
+</div>
+
+
+
+  <!-- <div class="login-container">
+    <form class="login-form">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+        />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div> -->
