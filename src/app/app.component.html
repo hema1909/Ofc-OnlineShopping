@@ -4,12 +4,17 @@
 
 <!-- <app-home></app-home> -->
 <nav class="navbar">
-    <div class="navbar-left">
-      <span class="app-name"  [routerLink]="['/home']">Mobify</span>
-    </div>
-    <a class="app-name" [routerLink]="['/products']">Products</a>
-    <div class="navbar-right">
-      <a class="login-link" [routerLink]="['/login']">Login</a>
-    </div>
-  </nav>
+  <div class="navbar-left">
+    <span class="app-name" [routerLink]="['/home']">Mobify</span>
+  </div>
+  <div class="navbar-center">
+    <li>
+      <a class="app-name" [routerLink]="['/products']">Products</a>
+      <a class="app-name" [routerLink]="['/cart']">Cart</a>
+    </li>
+  </div>
+  <div class="navbar-right">
+    <a class="login-link" [routerLink]="['/login']">Login</a>
+  </div>
+</nav>
 <router-outlet></router-outlet>

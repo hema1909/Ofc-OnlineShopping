@@ -1,7 +1,74 @@
-<tr *ngFor="let p of products; let i = index">
+<!-- <div class="container">
+    <div class="row">
+        <ng-container *ngFor="let p of products; let i = index">
+            <div class="card col-md-3">
+                <img src={{p.image}} height="200px" width="200px">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{p.productName}}</h5>
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{p.brand}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;;max-width: 100ch;">{{p.description}}</p>
+                <p><strong>Price:</strong>{{p.price}}</p>
+                <button type="submit" (click)="addToCart(i)">Add to Cart</button>
+            </div>
+        </ng-container>
+    </div>
+</div> -->
+
+
+
+<!-- <tr *ngFor="let p of products; let i = index">
     <td><img src={{p.image}} height="200px" width="200px"></td>
     <td>{{p.productName}}{{p.brand}}{{p.price}}{{p.description}}{{p.ratings}}{{p.stock}}</td>
     <td><button type="submit" (click)="addToCart(i)">Add to Cart</button></td>
-</tr>
+</tr> -->
 
+<!-- <tr *ngFor="let o of orders; let i = index">
+    <td>
+        {{o.id}}
+    </td>
+    <td><button type="submit" (click)="addToCart(i)">Cart</button></td>
+</tr> -->
        
+<div class="products">
+    <h4 class="title">Mobile Products</h4>
+    <div class="item">
+      <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+      <div class="table-responsive">
+        <table class="table table-hover margin-bottom-none">
+          <thead>
+            <tr>
+              <th>Product Image</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr *ngFor="let p of products; let i = index" class="container-box">
+              <td>
+                <div class="image">
+                  <img src="{{ p.image }}" height="200px" width="200px" />
+                </div>
+              </td>
+              <td>
+                <div class="description">
+                  {{ p.productName }}<br />
+                  {{ p.brand }}<br />
+                  {{ p.price }}<br />
+                  {{ p.description }}<br />
+                  {{ p.ratings }}<br />
+                  {{ p.stock }}
+                </div>
+              </td>
+              <td>
+                <div class="button">
+                  <button type="submit" (click)="addToCart(i)">
+                    Add to Cart
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

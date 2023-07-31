@@ -1,33 +1,64 @@
 <!-- Code for Navbar at home page -->
-
-
+<!-- <nav class="navbar">
+  <div class="navbar-left">
+    <span class="app-name">Mobify</span>
+  </div>
+  <a class="app-name" [routerLink]="['/product']">Products</a>
+  <div class="navbar-right">
+    <a class="login-link" [routerLink]="['/login']">Login</a>
+  </div>
+</nav>
+<router-outlet></router-outlet> -->
 
 <!-- Carousel at home page -->
 <div class="carousel-container">
-    <igx-carousel #carousel>
-      <igx-slide *ngFor="let slide of slides">
-        <div class="image-container">
-          <img [src]="slide.src" />
-        </div>
-      </igx-slide>
-    </igx-carousel>
+  <igx-carousel #carousel [interval]="3000">
+    <igx-slide *ngFor="let slide of slides">
+      <div class="image-container">
+        <img [src]="slides[currentSlideIndex].src" />
+      </div>
+    </igx-slide>
+  </igx-carousel>
+</div>
+
+<!-- Code for Cards at Home Page -->
+<div class="cards-container">
+  <div class="card" [routerLink]="['/products']">
+    <img src="assets/images/iphone.jpeg" alt="Product 1" />
+    <div class="product-brand">I-Phone</div>
+    <div class="product-description">
+      The iPhone is a popular and iconic line of smartphones designed and
+      marketed by Apple Inc., known for its sleek design, powerful performance,
+      and user-friendly interface.
+    </div>
+    <div class="product-ratings">⭐⭐⭐⭐⭐</div>
   </div>
-  
-  <!-- <img
-    src="https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg?q=70"
-    alt=""
-    height="200px"
-    width="200px"
-  />
-  <img
-    src="https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg?q=70"
-    alt=""
-    height="200px"
-    width="200px"
-  />
-  <img
-    src="https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg?q=70"
-    alt=""
-    height="200px"
-    width="200px"
-  /> -->
+  <div class="card" [routerLink]="['/products']">
+    <img src="assets/images/realme.jpg" alt="Product 2" />
+    <div class="product-brand">Realme</div>
+    <div class="product-description">
+      Realme is a fast-growing smartphone brand that offers affordable and
+      feature-rich mobile devices, targeting the young and tech-savvy audience.
+    </div>
+    <div class="product-ratings">⭐⭐⭐⭐</div>
+  </div>
+  <div class="card" [routerLink]="['/products']">
+    <img src="assets/images/samsung.jpg" alt="Product 3" />
+    <div class="product-brand">Samsung</div>
+    <div class="product-description">
+      Samsung Mobile is a renowned brand known for its innovative and
+      high-quality smartphones with cutting-edge technology and stylish designs.
+    </div>
+    <div class="product-ratings">⭐⭐⭐⭐⭐</div>
+  </div>
+  <div class="card" [routerLink]="['/products']">
+    <img src="assets/images/redmi.png" alt="Product 4" />
+    <div class="product-brand">Redmi</div>
+    <div class="product-description">
+      Redmi Mobile, a sub-brand of Xiaomi, is known for its budget-friendly yet
+      feature-packed smartphones, catering to a wide range of consumers
+      worldwide.
+    </div>
+    <div class="product-ratings">⭐⭐⭐</div>
+  </div>
+</div>

@@ -15,6 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IgxCarouselModule, IgxSliderModule } from 'igniteui-angular';
 import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { CartComponent } from './cart/cart.component';
     EditComponent,
     AddProductComponent,
     ProductsComponent,
-    CartComponent
+    CartComponent,
+    PaymentComponent,
+    ThankyouComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

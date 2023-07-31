@@ -3,6 +3,8 @@ import { Product } from '../product.model';
 import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { Customer } from '../customer.model';
+import { Order } from '../order.model';
 
 @Component({
   selector: 'app-products',
@@ -12,11 +14,15 @@ import { CartService } from '../services/cart.service';
 export class ProductsComponent implements OnInit {
 
   products : Product[] = [];
+  cred : Customer = new Customer();
+  orders : Order[] =[];
+
   shoppingcart : Product[] = [];
 
   constructor(private service:ProductService,
     private router: Router,
     private cart : CartService){}
+
 
   ngOnInit(): void {
     this.service.productList().subscribe(data => this.products = data)
@@ -24,10 +30,8 @@ export class ProductsComponent implements OnInit {
 
   addToCart(id: number){
     alert(this.products[id].productId)
-    localStorage.setItem("Products", JSON.stringify(this.products[id]))
+    localStorage.setItem("Item", JSON.stringify(this.products[id]))
     this.cart.addToCart(this.products[id]);
-    // this.shoppingcart.push(this.products[id])
-    alert(this.products[id])
     this.router.navigate(["/cart"])
   }
   

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
+import { Customer } from '../customer.model';
 
 @Component({
   selector: 'app-admin',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class AdminComponent implements OnInit{
 
   products : Product[] = [];
+ 
 
   constructor(private service:ProductService , private router:Router){}
   ngOnInit(): void {
@@ -26,10 +28,11 @@ export class AdminComponent implements OnInit{
   edit(id: number){
     alert(this.products[id].productId)
     localStorage.setItem("Products", JSON.stringify(this.products[id]))
+   
     this.router.navigate(["/edit"]);
 }
 
 addProduct(){
-  this.router.navigate(["addproduct"])
+  this.router.navigate(["/addproduct"])
 }
 }

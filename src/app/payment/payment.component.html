@@ -1,0 +1,23 @@
+<div class="payment-container">
+    <h2>Payment Details</h2>
+    <form class="was-validated" #payForm="ngForm" >
+      <!-- <form> -->
+      <div class="form-group">
+        <label for="cardHolderName">Card Holder Name:</label>
+        <input type="text" id="cardHolderName" name="cardHolderName" required />
+      </div>
+      <div class="form-group">
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required />
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required />
+      </div>
+      <div class="form-group">
+        <label for="validTill">Valid Till:</label>
+        <input type="text" id="validTill" name="validTill" required />
+      </div>
+      <button type="submit" (click)="payNow()" [disabled]="!payForm" >Pay Now</button>
+    </form>
+  </div>
